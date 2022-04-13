@@ -201,6 +201,25 @@ console.log("Dishes With Even Serving Counts ", dishesWithEvenServings);
 //5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
 //Filter
 
+function problemFive(){
+
+    let results = dishes.filter(function(el){
+    let lengthOfArray = el.ingredients.length;
+    let counter = 0;
+    for(let i = 0; i < lengthOfArray; i++){
+        if(el.ingredients[i] === 'tomato' || el.ingredients[i] === "cheese"){
+            counter++
+        }
+    }
+    if(counter > 1){
+        return true;
+    }})
+    
+    return results;
+}
+let dishesWithIngredientCheeseAndTomato = problemFive();
+console.log("Dishes With Ingredients That Include Cheese And Tomato: ", dishesWithIngredientCheeseAndTomato);
+
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
 // BONUS: (come back to this after finishing all)
