@@ -204,18 +204,10 @@ console.log("Dishes With Even Serving Counts ", dishesWithEvenServings);
 function problemFive(){
 
     let results = dishes.filter(function(el){
-    let lengthOfArray = el.ingredients.length;
-    let counter = 0;
-    for(let i = 0; i < lengthOfArray; i++){
-        if(el.ingredients[i] === 'tomato' || el.ingredients[i] === "cheese"){
-            counter++
-        }
-    }
-    if(counter > 1){
-        return true;
-    }})
-    
+        return (el.ingredients.includes("cheese") && el.ingredients.includes("tomato"))
+    })
     return results;
+    
 }
 let dishesWithIngredientCheeseAndTomato = problemFive();
 console.log("Dishes With Ingredients That Include Cheese And Tomato: ", dishesWithIngredientCheeseAndTomato);
